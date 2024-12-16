@@ -167,6 +167,7 @@ mostrarMapa($pomodoroHaters);
 echo "<br>";
 echo "<h1> EJ5 </h1>";
 echo "<br>";
+
 dañostototales($pomodoroHaters);
 
 echo "<br>";
@@ -208,7 +209,7 @@ function calcularPersonasAFectadas($mapa) {
     $totalPersonasAfectadas = 0;
         foreach ($mapa as $fila) {
             foreach ($fila as $celda) {
-              if ($celda == 'A') {
+              if ($celda == 'C') {
             $totalPersonasAfectadas += $habitantesPorKm2;
           }
      }
@@ -221,8 +222,8 @@ function aplicarImpactostotales(&$mapa, $impactos) {
         $fila = $impacto[0];
         $columna = $impacto[1];
         
-        if ($mapa[$fila][$columna] == 'C') {
-            $mapa[$fila][$columna] = 'X'; 
+        if ($mapa[$fila][$columna] == 'A') {
+            $mapa[$fila][$columna] = 'C'; 
         }
         elseif ($mapa[$fila][$columna] == '0'){
                 $mapa[$fila][$columna] = 'X';
